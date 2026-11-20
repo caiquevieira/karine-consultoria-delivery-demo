@@ -21,7 +21,7 @@
   <meta property="og:title" content="Consultoria de delivery para restaurantes | Mazzaro">
   <meta property="og:description" content="Karina Mazzaro, 10 anos de iFood: cardápio, preços, campanhas e indicadores no iFood, 99Food, Rappi e Keeta. Itatiba e região ou online.">
   <meta property="og:url" content="https://karinamazzaro.com.br/">
-  <meta property="og:image" content="https://karinamazzaro.com.br/assets/img/og-image.jpg">
+  <meta property="og:image" content="https://karinamazzaro.com.br/assets/img/og-image.jpg?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
@@ -29,8 +29,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Montserrat:wght@500;700;800&display=swap">
 
-  <link rel="stylesheet" href="assets/css/styles.css?v=202611201412">
-  <script src="assets/js/main.js?v=202611201412" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=202611201441">
+  <!-- Google Analytics 4 (Consent Mode v2 avançado): a tag fica no HTML para o Google detectá-la, mas sem cookies
+       até o "Aceitar" do banner (main.js atualiza o consentimento). ID repetido no CONFIG do main.js. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L0HZTKZH5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var aceito = false;
+    try { aceito = localStorage.getItem('ul-consentimento') === 'aceito'; } catch (e) {}
+    var sinal = aceito ? 'granted' : 'denied';
+    gtag('consent', 'default', { analytics_storage: sinal, ad_storage: sinal, ad_user_data: sinal, ad_personalization: sinal });
+    gtag('js', new Date());
+    gtag('config', 'G-2L0HZTKZH5');
+  </script>
+  <script src="assets/js/main.js?v=202611201441" defer></script>
 
   <!-- Consultoria sem endereço físico: ProfessionalService com área de atendimento -->
   <script type="application/ld+json">
@@ -160,13 +173,11 @@
     </div>
   </div>
 
-  <!-- Clientes: logos no formato de "avatar de loja" do app.
-       Links do iFood pendentes (briefing.md, seção 4, IFOOD_*). Quando chegarem, envolver cada <img> + nome em
-       <a href="URL" target="_blank" rel="noopener" data-track="ifood-cliente" class="group block">,
-       acrescentar "Ver no iFood →" e o hover (group-hover:-translate-y-1) na imagem. -->
+  <!-- Clientes: logos no formato de "avatar de loja" do app; os que têm loja no iFood levam até ela.
+       Links: briefing.md, seção 4 (IFOOD_*). Sem link ainda: Assacabrasa, Vila Catá, Bemdito Burger. -->
   <div class="container-lp mt-20 border-t-2 border-dashed border-cafe/15 pt-12 md:mt-28">
     <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-texto-suave">Alguns restaurantes que atendo</h3>
-    <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5" role="list">
+    <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6" role="list">
       <li>
         <img src="assets/img/cliente-assacabrasa-600.webp" width="600" height="600" alt="Logo da Assacabrasa" loading="lazy" decoding="async"
              class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
@@ -176,21 +187,37 @@
         <img src="assets/img/cliente-rosario-linguicaria-600.webp" width="600" height="600" alt="Logo do Rosário Linguiçaria Restaurante" loading="lazy" decoding="async"
              class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
         <p class="mt-4 font-bold">Rosário Linguiçaria</p>
+        <p class="mt-0.5 text-sm text-texto-suave">Ver no iFood:</p>
+        <ul class="mt-1 space-y-1 text-sm" role="list">
+          <li><a href="https://www.ifood.com.br/delivery/braganca-paulista-sp/restaurante-rosario---portal-taboao/5f1fbd6e-6e16-4d4a-9571-ba118239e8c4" target="_blank" rel="noopener" data-track="ifood-cliente" data-origem="rosario-portal-taboao" class="font-semibold underline decoration-amarelo decoration-2 underline-offset-4 hover:decoration-cafe">Portal Taboão →</a></li>
+          <li><a href="https://www.ifood.com.br/delivery/braganca-paulista-sp/restaurante-rosario-aeroporto-lagos-de-santa-helena/4887a2a2-c752-4e7a-85d1-ad1785564973" target="_blank" rel="noopener" data-track="ifood-cliente" data-origem="rosario-aeroporto" class="font-semibold underline decoration-amarelo decoration-2 underline-offset-4 hover:decoration-cafe">Aeroporto →</a></li>
+        </ul>
       </li>
       <li>
-        <img src="assets/img/cliente-bar-rosario-600.webp" width="600" height="600" alt="Fachada do Bar Rosário, com o letreiro vermelho" loading="lazy" decoding="async"
-             class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
-        <p class="mt-4 font-bold">Bar Rosário</p>
+        <a href="https://www.ifood.com.br/delivery/braganca-paulista-sp/restaurante-e-bar-rosario-centro-centro/391d6864-ddef-48f3-b293-15f6b4bdc154" target="_blank" rel="noopener" data-track="ifood-cliente" data-origem="bar-rosario-centro" class="group block">
+          <img src="assets/img/cliente-bar-rosario-600.webp" width="600" height="600" alt="Fachada do Bar Rosário, com o letreiro vermelho" loading="lazy" decoding="async"
+               class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)] transition duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_16px_32px_rgb(34_24_22/0.24)]">
+          <span class="mt-4 block font-bold">Bar Rosário</span>
+          <span class="mt-0.5 inline-flex items-center gap-1 text-sm font-semibold underline decoration-amarelo decoration-2 underline-offset-4 group-hover:decoration-cafe">Centro, no iFood <span aria-hidden="true">→</span></span>
+        </a>
       </li>
       <li>
-        <img src="assets/img/cliente-gel-lanches-600.webp" width="600" height="600" alt="Logo da Gel Lanches" loading="lazy" decoding="async"
-             class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
-        <p class="mt-4 font-bold">Gel Lanches</p>
+        <a href="https://www.ifood.com.br/delivery/atibaia-sp/gel-lanches-cidade-satelite/57786a18-b8f8-45e9-80f5-d734a96a9b4a" target="_blank" rel="noopener" data-track="ifood-cliente" data-origem="gel-lanches" class="group block">
+          <img src="assets/img/cliente-gel-lanches-600.webp" width="600" height="600" alt="Logo da Gel Lanches" loading="lazy" decoding="async"
+               class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)] transition duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_16px_32px_rgb(34_24_22/0.24)]">
+          <span class="mt-4 block font-bold">Gel Lanches</span>
+          <span class="mt-0.5 inline-flex items-center gap-1 text-sm font-semibold underline decoration-amarelo decoration-2 underline-offset-4 group-hover:decoration-cafe">Ver no iFood <span aria-hidden="true">→</span></span>
+        </a>
       </li>
       <li>
         <img src="assets/img/cliente-vila-cata-600.webp" width="600" height="600" alt="Logo da Vila Catá" loading="lazy" decoding="async"
              class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
         <p class="mt-4 font-bold">Vila Catá</p>
+      </li>
+      <li>
+        <img src="assets/img/cliente-bemdito-burger-600.webp" width="500" height="500" alt="Logo da Bemdito Burger" loading="lazy" decoding="async"
+             class="aspect-square w-full max-w-40 rounded-[1.75rem] object-cover shadow-[0_10px_24px_rgb(34_24_22/0.18)]">
+        <p class="mt-4 font-bold">Bemdito Burger</p>
       </li>
     </ul>
   </div>

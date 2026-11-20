@@ -12,8 +12,21 @@
   <!-- DEMO:FIM -->
   <link rel="icon" href="assets/icons/favicon.ico" sizes="32x32">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/css/styles.css?v=202611201412">
-  <script src="assets/js/main.js?v=202611201412" defer></script>
+  <link rel="stylesheet" href="assets/css/styles.css?v=202611201441">
+  <!-- Google Analytics 4 (Consent Mode v2 avançado): a tag fica no HTML para o Google detectá-la, mas sem cookies
+       até o "Aceitar" do banner (main.js atualiza o consentimento). ID repetido no CONFIG do main.js. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L0HZTKZH5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var aceito = false;
+    try { aceito = localStorage.getItem('ul-consentimento') === 'aceito'; } catch (e) {}
+    var sinal = aceito ? 'granted' : 'denied';
+    gtag('consent', 'default', { analytics_storage: sinal, ad_storage: sinal, ad_user_data: sinal, ad_personalization: sinal });
+    gtag('js', new Date());
+    gtag('config', 'G-2L0HZTKZH5');
+  </script>
+  <script src="assets/js/main.js?v=202611201441" defer></script>
 </head>
 <body class="bg-fundo text-texto font-corpo antialiased">
   <!-- Modelo genérico. Para clientes com alto tráfego ou dados sensíveis, recomendar revisão por advogado. -->
@@ -39,19 +52,19 @@
         <h2>Quais dados coletamos</h2>
         <ul>
           <li><strong>Contato pelo WhatsApp:</strong> quando você clica em um botão de WhatsApp, a conversa acontece no aplicativo WhatsApp. Usamos o nome, o número e as mensagens que você enviar apenas para responder e prestar o atendimento solicitado.</li>
-          <li><strong>Cookies de medição (somente com seu consentimento):</strong> se você aceitar, usamos o Google Analytics e o Meta Pixel para contar visitas, entender quais partes do site são mais usadas e medir o resultado de anúncios. Esses serviços podem registrar dados como páginas visitadas, tipo de dispositivo, cidade aproximada e cliques em botões.</li>
+          <li><strong>Cookies de medição (somente com seu consentimento):</strong> se você aceitar, usamos o Google Analytics para contar visitas e entender quais partes do site são mais usadas. Esses serviços podem registrar dados como páginas visitadas, tipo de dispositivo, cidade aproximada e cliques em botões.</li>
         </ul>
         <p>Este site não possui formulários e não coleta dados sensíveis.</p>
       </section>
 
       <section>
         <h2>Com quem compartilhamos</h2>
-        <p>Os dados de medição são processados pelo Google (Google Analytics) e pela Meta (Meta Pixel), conforme as políticas de privacidade dessas empresas. Não vendemos nem cedemos seus dados a terceiros.</p>
+        <p>Os dados de medição são processados pelo Google (Google Analytics), conforme a política de privacidade da empresa. Não vendemos nem cedemos seus dados a terceiros.</p>
       </section>
 
       <section>
         <h2>Cookies e como mudar sua escolha</h2>
-        <p>Os cookies de medição só são ativados depois que você clica em "Aceitar". Você pode mudar sua escolha quando quiser pelo botão abaixo ou pelo link "Preferências de cookies" no rodapé do site. Também é possível apagar os cookies nas configurações do seu navegador.</p>
+        <p>Os cookies de medição só são ativados depois que você clica em "Aceitar". Antes disso, o Google Analytics recebe apenas sinais anônimos, sem cookies e sem identificar você, usados para estimativas de visitas. Você pode mudar sua escolha quando quiser pelo botão abaixo ou pelo link "Preferências de cookies" no rodapé do site. Também é possível apagar os cookies nas configurações do seu navegador.</p>
         <p><button type="button" class="btn btn-contorno" data-abrir-consentimento>Preferências de cookies</button></p>
       </section>
 

@@ -1,7 +1,7 @@
 /* Configuração do projeto: preencher a partir do briefing.md.
    IDs vazios = nenhum script de terceiros é carregado e o banner de cookies não aparece. */
 const CONFIG = {
-  ga4Id: '', // ex.: 'G-XXXXXXXXXX'
+  ga4Id: 'G-2L0HZTKZH5',
   metaPixelId: '', // ex.: '123456789012345'
 };
 
@@ -45,19 +45,9 @@ function carregarAnalytics() {
   if (analyticsCarregado) return;
   analyticsCarregado = true;
 
-  if (CONFIG.ga4Id) {
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${CONFIG.ga4Id}`;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-    // Só chega aqui com a escolha "aceito" salva ou recém-feita
-    window.gtag('consent', 'default', sinaisConsentimento(true));
-    window.gtag('js', new Date());
-    window.gtag('config', CONFIG.ga4Id);
+  // GA4: a tag já vem no <head> com consentimento negado; aqui só libera os cookies.
+  if (CONFIG.ga4Id && window.gtag) {
+    window.gtag('consent', 'update', sinaisConsentimento(true));
   }
 
   if (CONFIG.metaPixelId) {
@@ -117,8 +107,8 @@ function iniciarConsentimento() {
   banner?.querySelector('[data-consentimento="recusar"]')?.addEventListener('click', () => {
     salvarConsentimento('recusado');
     fechar();
-    // Scripts já carregados só saem da página com um recarregamento.
-    if (analyticsCarregado) location.reload();
+    // O Meta Pixel já carregado só sai da página com um recarregamento (o GA4 já foi atualizado acima).
+    if (analyticsCarregado && CONFIG.metaPixelId) location.reload();
   });
 
   botoesAbrir.forEach((b) => b.addEventListener('click', abrir));
@@ -127,12 +117,13 @@ function iniciarConsentimento() {
 function iniciarTracking() {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('[data-track]');
-    if (!link || !analyticsCarregado) return;
+    if (!link) return;
     const evento = EVENTOS[link.dataset.track];
     if (!evento) return;
     const origem = link.dataset.origem || '';
+    // GA4 respeita o Consent Mode sozinho (sem aceite, envia só sinais sem cookies)
     if (window.gtag && evento.ga) window.gtag('event', evento.ga, { ...evento.gaParams, origem });
-    if (window.fbq && evento.meta) window.fbq('track', evento.meta, { origem });
+    if (analyticsCarregado && window.fbq && evento.meta) window.fbq('track', evento.meta, { origem });
   });
 }
 
