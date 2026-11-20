@@ -1,0 +1,29 @@
+# Mazzaro Consultoria Delivery
+
+> Consultoria de delivery para restaurantes, feita por Karina Mazzaro, com 10 anos de atuação no iFood. Atende iFood, 99Food, Rappi, Keeta e outras plataformas. Presencial em Itatiba (SP) e região, até 100 km; online acima disso. Atendimento pelo WhatsApp (11) 97194-5364.
+
+## Contato
+
+- WhatsApp: (11) 97194-5364 (https://wa.me/5511971945364)
+- E-mail: karina.mazzaro.delivery@gmail.com
+
+## Serviços
+
+- Engenharia de cardápio: precificação, descrições, fotos e organização dos produtos
+- Campanhas e estratégias comerciais para vender mais e aumentar o ticket médio
+- Posicionamento e ranqueamento da loja nos aplicativos
+- Suporte às plataformas e gestão de chamados
+- Análise de desempenho e relatório de prioridades
+- Reunião mensal de alinhamento, presencial ou online
+
+## Planos
+
+- Start: R$ 399, pagamento único, sem fidelidade
+- Performance: R$ 599, pagamento único, sem fidelidade
+- Premium: R$ 699 por mês, pós-pago, mínimo de 3 meses
+- Desconto por CNPJ: 2 = 10%, 3 = 15%, 4 a 5 = 20%, 6 ou mais = sob negociação
+
+## Páginas
+
+- [Página inicial](https://caiquevieira.github.io/karine-consultoria-delivery-demo/)
+- [Política de Privacidade](https://caiquevieira.github.io/karine-consultoria-delivery-demo/politica-de-privacidade.html)
