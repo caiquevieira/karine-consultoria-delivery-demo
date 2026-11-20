@@ -25,5 +25,5 @@
 
 ## Páginas
 
-- [Página inicial](https://caiquevieira.github.io/karine-consultoria-delivery-demo/)
-- [Política de Privacidade](https://caiquevieira.github.io/karine-consultoria-delivery-demo/politica-de-privacidade.html)
+- [Página inicial](https://karinamazzaro.com.br/)
+- [Política de Privacidade](https://karinamazzaro.com.br/politica-de-privacidade.html)

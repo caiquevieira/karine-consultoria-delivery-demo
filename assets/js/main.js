@@ -13,6 +13,7 @@ const EVENTOS = {
   instagram: { ga: 'click_instagram' },
   'avaliar-google': { ga: 'click_avaliar_google' },
   'como-chegar': { ga: 'click_como_chegar', meta: 'FindLocation' },
+  'ifood-cliente': { ga: 'click_ifood_cliente' },
 };
 
 let analyticsCarregado = false;
